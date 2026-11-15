@@ -1,0 +1,24 @@
+Apps Script deployment and security notes
+Deploying the validation endpoint
+Open Google Apps Script and create a project.
+Copy `code/Code.gs` into the script editor.
+Replace `REPLACE_WITH_A_NEW_RANDOM_SECRET` with a newly generated random secret.
+Save the project.
+Select Deploy → New deployment → Web app.
+Set Execute as to your account.
+Choose an access setting that allows Make.com to call the endpoint. If using anonymous/public access, understand that anyone who obtains the URL can reach the web app.
+Deploy and copy the web-app URL ending in `/exec`.
+Configure Make.com's HTTP module with that URL and the same secret in the JSON body.
+When changing the script, create a new deployment version using Deploy → Manage deployments → Edit → New version → Deploy.
+Secret handling
+The repository intentionally contains a placeholder only.
+Do not commit the real API secret, even in an example JSON file.
+Do not publish screenshots showing the secret.
+If a secret has been exposed in a chat, screenshot, log, or repository, rotate it in both Apps Script and Make.com.
+Do not rely on a hard-coded shared secret as a complete production authentication system.
+Privacy and production considerations
+Use synthetic lead data in screenshots and repository examples.
+Restrict access to the spreadsheet, Airtable base, Gmail account, and Apps Script project.
+Review Apps Script quotas and Google account policies before relying on this for ongoing business use.
+Consider stronger authentication, rate limiting, spam protection, consent capture, retention controls, and audit logging before processing real customer information.
+The sample script intentionally returns a generic error for unexpected processing failures rather than exposing internal exception details.
