@@ -1,1 +1,11 @@
-
+{
+  "status": "success",
+  "valid": true,
+  "errors": [],
+  "data": {
+    "name": "Demo Client",
+    "email": "democlient@example.com",
+    "phone": "**********",
+    "message": "I am interested in your services."
+  }
+}
